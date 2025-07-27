@@ -1,0 +1,36 @@
+{{define "update-form"}}
+<form>
+  <h2>Update task</h2>
+  <div>
+    <input
+      type="text"
+      class="bg-slate-200 text-slate-900 p-1"
+      name="task"
+      value="{{.Task}}"
+    />
+  </div>
+  <div class="flex align-middle">
+    <span>Done: </span>
+    <input
+      type="checkbox"
+      name="done"
+      class="h-6 w-6 rounded-sm bg-slate-900 text-green-200"
+      {{if
+      .Done}}
+      checked
+      {{end}}
+      id=""
+    />
+  </div>
+  <div class="mt-2">
+    <button
+      class="p-2 bg-yellow-300 text-black text-center text-bold text-slate-900 cursor-pointer"
+      hx-put="/tasks/{{.ID}}"
+      hx-target="#todo-list"
+      hx-target="innerHTML"
+    >
+      Save
+    </button>
+  </div>
+</form>
+{{end}}

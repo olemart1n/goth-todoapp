@@ -1,0 +1,24 @@
+{{define "todo"}}
+
+<li class="text-slate-950 bg-slate-300 p-2">
+  <span {{if .Done}} style="text-decoration: line-through" {{end}}
+    >{{.Task}}</span
+  >
+  <a
+    href="#"
+    class="bg-yellow-200 rounded p-1"
+    hx-target="#form-section"
+    hx-get="/get-update-form/{{.ID}}"
+    >Update</a
+  >
+  |
+  <a
+    href="#"
+    class="bg-red-100 rounded p-1"
+    hx-delete="/tasks/{{.ID}}"
+    hx-confirm="Are you sure you want to Delete this Task?"
+    hx-target="#taskList"
+    >Delete</a
+  >
+</li>
+{{end}}
