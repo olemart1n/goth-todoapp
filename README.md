@@ -1,0 +1,3 @@
+# GOTH
+
+## (Go, Templ, htmx)
