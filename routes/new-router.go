@@ -14,6 +14,11 @@ func NewRouter(pool *pgxpool.Pool, tmpl *template.Template) *mux.Router {
 	r.HandleFunc("/get-update-form/{id}", GetUpdateForm(pool, tmpl)).Methods("GET")
 	r.HandleFunc("/new-todo", newTodo(pool, tmpl)).Methods("POST")
 
+	r.HandleFunc("/update-todo/{id}", updateTodo(pool, tmpl)).Methods("PUT")
+	r.HandleFunc("/test", test(pool, tmpl)).Methods("PUT")
+
+	r.HandleFunc("/todo/{id}", deleteTodo(pool, tmpl)).Methods("DELETE")
+
 	// Serve static files at /static/
 	staticFileDirectory := http.Dir("static/")
 	staticFileHandler := http.StripPrefix("/static/", http.FileServer(staticFileDirectory))

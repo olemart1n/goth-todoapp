@@ -1,5 +1,5 @@
 {{define "update-form"}}
-<form>
+<form hx-put="/update-todo/{{.ID}}" hx-target="#todo-list" hx-swap="afterbegin">
   <h2>Update task</h2>
   <div>
     <input
@@ -25,12 +25,10 @@
   <div class="mt-2">
     <button
       class="p-2 bg-yellow-300 text-black text-center text-bold text-slate-900 cursor-pointer"
-      hx-put="/tasks/{{.ID}}"
-      hx-target="#todo-list"
-      hx-target="innerHTML"
     >
       Save
     </button>
+    <button type="click" hx-put="/test">>Test button</button>
   </div>
 </form>
 {{end}}

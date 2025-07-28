@@ -12,7 +12,7 @@ type Config struct {
 	Port        string // You can add more fields as needed
 }
 
-func LoadConfig() (*Config, error) {
+func loadConfig() (*Config, error) {
 	cfg, err := godotenv.Read(".env") // Optional: loads .env file automatically
 	if err != nil {
 		return nil, fmt.Errorf("failed to read .env file: %v", err)
