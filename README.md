@@ -12,7 +12,7 @@ CREATE TABLE todos (
 );
 ```
 
-and a .env file that looks like this
+Create a .env file in root directory with a url to connect to the postgresql database.
 
 ```
 DATABASE_URL=postgres://*username*:*password*@localhost:*port*/*database_name*
