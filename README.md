@@ -2,7 +2,7 @@
 
 ## (Go, Templ, htmx)
 
-This simple todo app uses connect to a postgresql database which need a table like this
+This simple todo app connects to a postgresql database which need a table like this
 
 ```sql
 CREATE TABLE todos (
